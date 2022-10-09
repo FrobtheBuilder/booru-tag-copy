@@ -52,9 +52,14 @@
 
     if (window.location.host.includes("gelbooru")) {
         const tagBar = document.querySelector("ul.tag-list");
-        const tagsEnd = document.querySelector(
-            "ul.tag-list > li > br"
-        ).parentElement;
+        let optionsHeading
+        document.querySelectorAll(
+            "ul.tag-list > li > h3"
+        ).forEach((el) => {
+            if (el.textContent === "Options") {
+                optionsHeading = el
+            }
+        })
         const grabButton = document.createElement("li");
         grabButton.textContent = "Copy all tags";
         grabButton.style.cursor = "pointer";
@@ -62,10 +67,11 @@
         grabButton.addEventListener("click", () => {
             navigator.clipboard.writeText(grabGelbooruTags());
         });
-        tagBar.insertBefore(grabButton, tagsEnd);
+        tagBar.insertBefore(grabButton, optionsHeading.parentElement.nextSibling);
     }
     else if (window.location.host.includes("danbooru")) {
-        const tagBar = document.querySelector("ul.general-tag-list");
+        //const tagBar = document.querySelector("ul.general-tag-list");
+        const optionsList = document.querySelector("section#post-options > ul")
         const grabButton = document.createElement("li");
         grabButton.textContent = "Copy all tags";
         grabButton.style.cursor = "pointer";
@@ -73,7 +79,8 @@
         grabButton.addEventListener("click", () => {
             navigator.clipboard.writeText(grabDanbooruTags());
         });
-        tagBar.appendChild(grabButton);
+        optionsList.insertBefore(grabButton, optionsList.firstChild);
+        //tagBar.insertBefore(grabButton, optionsHeading.nextSibling)
     }
 
 })();

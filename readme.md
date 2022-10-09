@@ -4,4 +4,4 @@ Currently supports Danbooru and Gelbooru.
 
 Install Tampermonkey or Violentmonkey or whatever and [install the script](https://raw.githubusercontent.com/FrobtheBuilder/booru-tag-copy/main/booru-tag-copy.user.js).
 
-Click the "Copy all tags" button at the bottom of the tag list.
+Click the newly added "Copy all tags" button in the Options menu on the image page.
