@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Booru Tag Copy
 // @namespace    http://tampermonkey.net/
-// @version      0.1
+// @version      0.2
 // @description  Copy tags from boorus!
 // @author       FrobtheBuilder
 // @match        https://gelbooru.com/*
